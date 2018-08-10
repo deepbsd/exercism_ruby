@@ -1,21 +1,14 @@
 
-# I'll work on refactoring this later.
 
 class Complement
     def self.of_dna(strand)
-        arr = strand.split('')
+        hash = { 'G' => 'C', 'C' => 'G', 'T' => 'A', 'A' => 'U'}
         string = ''
-        for c in arr do
-            if c == 'G' then string += 'C' end
-            if c == 'C' then string += 'G' end
-            if c == 'T' then string += 'A' end
-            if c == 'A' then string += 'U' end
+        strand.each_char do |c|
+            hash.has_key?(c) && string += hash[c]
         end
-        if string.length == strand.length then 
-            return string
-        else 
-            return ''
-        end
+        string.length == strand.length || string = ''
+        string
     end
 end
 
