@@ -3,7 +3,7 @@ class Raindrops
         result = ''
         hash = Hash[3 => 'Pling', 5 => 'Plang', 7 => 'Plong']
         for n in hash.each_key
-          result += hash[n] if num % n == 0
+          result += hash[n] if (num%n).zero?
         end
         return "#{num}" if result == '' or return result
     end
