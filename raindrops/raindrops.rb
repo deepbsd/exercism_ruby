@@ -1,18 +1,16 @@
 class Raindrops
     def self.convert(num)
-      case num
-	    when num % 3 == 0 && num % 5 == 0
-		  return "PlingPlang"
-		when num % 3 == 0
-		  return "Pling"
-		when num % 5 == 0
-		  return "Plang"
-		else
-		  return "#{num}"
-      end
+        result = ''
+        hash = Hash[3 => 'Pling', 5 => 'Plang', 7 => 'Plong']
+        for n in hash.each_key
+            if num % n == 0
+              result += hash[n]
+            end
+        end
+        
+        return "#{num}" if result == '' or return result
+
     end
-
-
 end
 
 module Bookkeeping
