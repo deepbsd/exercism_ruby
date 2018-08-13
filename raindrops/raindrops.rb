@@ -5,9 +5,7 @@ class Raindrops
         for n in hash.each_key
           result += hash[n] if num % n == 0
         end
-        
         return "#{num}" if result == '' or return result
-
     end
 end
 
