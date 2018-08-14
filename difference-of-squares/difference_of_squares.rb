@@ -5,13 +5,11 @@ class Squares
     end
 
     def square_of_sum()
-      arr = *(1..@number)
-      arr.sum**2
+      (1..@number).reduce(:+)**2
     end
 
     def sum_of_squares()
-      arr = *(1..@number)
-      arr.sum{ |n| n**2 }
+      (1..@number).inject { |sum, num| sum + num**2 }
     end
 
     def difference()
