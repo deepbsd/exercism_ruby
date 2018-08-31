@@ -1,7 +1,11 @@
 class RomanNumerals
-	
 
-    def self.to_roman(number)
+    def initialize(num)
+        @num = num
+	    @num.to_roman = to_roman(@num)
+    end
+
+    def to_roman(number)
     	romanhash = { 1000 => 'M', 900 => 'CM', 500 => 'D', 400 => 'CD', 100 => 'C', 90 => 'XC', 50 => 'L', 40 => 'XL', 10 => 'X', 9 => 'IX', 5 => 'V', 4 => 'IV', 1 => 'I'}
 
 	    result = ""
@@ -16,7 +20,7 @@ class RomanNumerals
 end
 
 module Bookkeeping
-	VERSION = 6 # Where the version number matches the one in the test
+	VERSION = 2 # Where the version number matches the one in the test
 end
 
 
