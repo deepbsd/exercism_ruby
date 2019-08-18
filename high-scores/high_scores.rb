@@ -3,11 +3,7 @@ class HighScores
 
     def initialize(scores)
         @scores = scores
-        #@latest_score = scores[-1]
-        #@personal_best_score = @scores.max
-        #@top_scores = @scores.sort.reverse
     end
-
 
     def latest
         scores.last
